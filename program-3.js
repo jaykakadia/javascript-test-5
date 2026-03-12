@@ -6,7 +6,7 @@ class Vehicle {
     this.year = year;
   }
   details() {
-    return `The vehical you have is ${this.model} model which is made by ${this.make} in year ${this.year}`;
+    return `The vehicle you have is ${this.model} model which is made by ${this.make} in year ${this.year}`;
   }
 }
 class Car extends Vehicle {
@@ -15,7 +15,7 @@ class Car extends Vehicle {
     this.doors = doors;
   }
   details() {
-    return `The vehical you have is ${this.model}, which is made by ${this.make} in year ${this.year} and has ${this.doors} doors.`;
+    return `The vehicle you have is ${this.model}, which is made by ${this.make} in year ${this.year} and has ${this.doors} doors.`;
 
   }
 }

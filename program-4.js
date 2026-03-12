@@ -8,8 +8,12 @@ class BankAccount {
   depo(amount) {
     this.balance += amount;
   }
-  with(amount) {
-    this.balance -= amount;
+  withdraw(amount) {
+    if (amount <= this.balance) {
+      this.balance -= amount;
+    } else {
+      console.log("Insufficient funds");
+    }
   }
   info() {
     return `Your account number = ${this.accountNumber}\nYour balance = ${this.balance}`;
@@ -18,5 +22,5 @@ class BankAccount {
 
 let jay = new BankAccount();
 jay.depo(1000);
-jay.with(500);
+jay.withdraw(500);
 console.log(jay.info());
