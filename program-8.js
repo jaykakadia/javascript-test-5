@@ -5,18 +5,18 @@ class Animal {
         this.species = species;
         this.sound = sound;
     }
-    animalSound() {
+    makeSound() {
         return `The animal is of ${this.species} and make a sound as ${this.sound}`;
     }
 }
 class Dog extends Animal {
-    constructor(species, sound, color) {
-        super(species, sound);
+    constructor( sound, color) {
+        super("Dog", sound);
         this.color = color;
     }
-    animalSound() {
-        return `The animal is of ${this.species} and make a sound as ${this.sound} and has a color of ${this.color}`;
+    makeSound() {
+        return `${super.makeSound()} and has a color of ${this.color}`;
     }
 }
-const dog = new Dog("Dog", "Bark", "Black");
-console.log(dog.animalSound());
+const dog = new Dog ("Bark", "Black");
+console.log(dog.makeSound());

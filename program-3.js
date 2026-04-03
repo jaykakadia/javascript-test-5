@@ -15,9 +15,8 @@ class Car extends Vehicle {
     this.doors = doors;
   }
   details() {
-    return `The vehicle you have is ${this.model}, which is made by ${this.make} in year ${this.year} and has ${this.doors} doors.`;
-
+    return `${super.details()} and has ${this.doors} doors.`;
   }
 }
-let gwagonR = new Car("maruti", "wagonR", 2025, "7");
+const gwagonR = new Car("maruti", "wagonR", 2025, 7);
 console.log(gwagonR.details())

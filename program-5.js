@@ -1,11 +1,14 @@
 // Write a JavaScript program that creates a class called 'Shape' with a method to calculate the area. Create two subclasses, 'Circle' and 'Triangle', that inherit from the 'Shape' class and override the area calculation method. Create an instance of the 'Circle' class and calculate its area. Similarly, do the same for the 'Triangle' class.
 class Shape {
     calcArea() {
-        return `Kal ana beta kal`;
+        throw new Error("calcArea() must be implemented");
     }
 }
 class Circle extends Shape {
     constructor(rad) {
+        if(rad <= 0) {
+            throw new Error("Radius must be greater than zero");
+        }
         super();
         this.rad = rad;
     }
@@ -15,6 +18,9 @@ class Circle extends Shape {
 }
 class Triangle extends Shape {
     constructor(base, height) {
+        if(base <= 0 || height <= 0) {
+            throw new Error("Base and height must be greater than zero");
+        }
         super();
         this.base = base;
         this.height = height;

@@ -11,7 +11,7 @@ class Person {
     }
 }
 const jay = new Person("jay" , 22, "india");
-let jay2 = new Person("jay2" , 22, "india2");
+const jay2 = new Person("jay2" , 22, "india2");
 
 
 console.log(jay.info());

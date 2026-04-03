@@ -12,14 +12,14 @@ class Book {
 }
 class Ebook extends Book {
     constructor(title, author, year, price) {
-        // this.title = title;
-        // this.author = author;
-        // this.year = year;
         super(title, author, year);
+        if(price < 0) {
+            throw new Error("Price cannot be negative");
+        }
         this.price = price;
     }
     bookDetail(){
-        return `The book is ${this.title} written by ${this.author} in ${this.year} with the price of $${this.price}`;
+        return `${super.bookDetail()} with the price of $${this.price}`;
     }
 }
 

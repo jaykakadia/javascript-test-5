@@ -10,15 +10,16 @@ class Employee{
     }
 }
 class Manager extends Employee {
-    constructor(salary, name, department){
-        super(salary, name);
-        this.department = department;
-    }
-    annualSalary(bonus){
-        return super.annualSalary() + bonus;
-    }
+  constructor(salary, name, department, bonus) {
+    super(salary, name);
+    this.department = department;
+    this.bonus = bonus;
+  }
+  annualSalary() {
+    return super.annualSalary() + this.bonus;
+  }
 }
-let manager1 = new Manager(100000, "Jay", "IT");
-let manager2 = new Manager(200000, "Karan", "Sales");
-console.log(manager1.annualSalary(10000));
-console.log(manager2.annualSalary(20000));
+let manager1 = new Manager(100000, "Jay", "IT", 1000000);
+let manager2 = new Manager(200000, "Karan", "Sales", 20000);
+console.log(manager1.annualSalary());
+console.log(manager2.annualSalary());

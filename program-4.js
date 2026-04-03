@@ -1,8 +1,13 @@
 // Write a JavaScript program that creates a class called "BankAccount" with properties for account number and balance. Include methods to deposit and withdraw money from the account. Create some instances of the "BankAccount" class, deposit some money, and withdraw a portion of it.
 
 class BankAccount {
-  constructor() {
-    this.accountNumber = Math.floor(10000 + Math.random() * 90000);
+  static accounts = [];
+  constructor(accNo) {
+    if (BankAccount.accounts.includes(accNo)) {
+      throw new Error("Account number already exists");
+    }
+    BankAccount.accounts.push(accNo);
+    this.accountNumber = accNo;
     this.balance = 0;
   }
   depo(amount) {
@@ -20,7 +25,8 @@ class BankAccount {
   }
 }
 
-let jay = new BankAccount();
+const jay = new BankAccount(123456);
 jay.depo(1000);
 jay.withdraw(500);
 console.log(jay.info());
+const jay2 = new BankAccount(123456);
